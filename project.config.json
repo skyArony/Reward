@@ -5,12 +5,14 @@
 		"es6": false,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "wxa6cce1b01dee378d",
 	"projectname": "reword",
+	"libVersion": "2.2.1",
 	"condition": {
 		"search": {
 			"current": -1,
