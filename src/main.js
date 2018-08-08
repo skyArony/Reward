@@ -14,14 +14,15 @@ export default {
     pages: [
       'pages/logs/main',
       'pages/index/main',
-      '^pages/home/main'
+      'pages/home/main',
+      'pages/task/main',
+      '^pages/publish/main',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#F06292',
       navigationBarTitleText: '悬赏令',
       navigationBarTextStyle: 'black',
-      backgroundColor: '#eeeeee'
     }
   }
 }

@@ -8,13 +8,10 @@ export default {
   // 这个字段走 app.json
   config: {
     window: {
-      backgroundColor: '#f5f5f5'
     },
     usingComponents: {
-      "i-tabs": "/iview/tabs/index",
-      "i-tab": "/iview/tab/index",
-      "i-icon": "/iview/icon/index",
-      "i-tag": "/iview/tag/index"
+      "i-tag": "/iview/tag/index",
+      "i-avatar": "/iview/avatar/index"
     },
   }
 }
