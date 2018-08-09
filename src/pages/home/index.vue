@@ -1,19 +1,23 @@
 <template>
   <div class="container">
+    <!-- top-栏 -->
     <div class="top-nav">
       <div v-if="!isSearch"
            class="nav-normal">
         <i-icon class="user"
                 type="mine"
                 size="36"
-                color="#80848f" />
+                color="#80848f"
+                @click="drawerController" />
         <i-tabs class="nav"
                 :current="current"
                 @change="tabChange">
-          <i-tab key="tab1"
-                 title="江湖"></i-tab>
-          <i-tab key="tab2"
-                 title="个人"></i-tab>
+          <i-tab key="explore"
+                 title="发现"></i-tab>
+          <i-tab key="online"
+                 title="线上"></i-tab>
+          <i-tab key="offline"
+                 title="线下"></i-tab>
         </i-tabs>
         <i-icon class="search"
                 type="search"
@@ -33,52 +37,132 @@
                 @click="closeSearch">取消</button>
       </div>
     </div>
+    <!-- !top-栏 -->
     <div class="page-body">
       <div class='page-in'
            style="background-color: #f5f5f5"
-           v-if="page == 'jh' && isSearch == false">
+           v-if="page == 'explore' && isSearch == false">
         <div class="block">
-          <div class="block-item">
-            <i-icon class="block-icon"
-                    type="computer"
-                    size="42"
-                    color="#80848f"
-                    @click="startSearch" />
-            <div>线上</div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
           </div>
-          <div class="block-item">
-            <i-icon class="block-icon"
-                    type="coordinates"
-                    size="42"
-                    color="#80848f"
-                    @click="startSearch" />
-            <div>线下</div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
           </div>
-          <div class="block-item">
-            <i-icon class="block-icon"
-                    type="flag"
-                    size="42"
-                    color="#80848f"
-                    @click="startSearch" />
-            <div>跑腿</div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
           </div>
         </div>
         <div class="list"></div>
-        <div class="publish">
-          <div class="publish-icon-block">
-            <div class="public-icon-in">
-              <i-icon class="public-icon"
-                      type="add"
-                      size="39"
-                      color="#fff"
-                      @click="startSearch" />
+      </div>
+      <div class='page-in'
+           v-else-if="page == 'online' && isSearch == false">
+                <div class="block">
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
+          </div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
+          </div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
             </div>
           </div>
         </div>
       </div>
       <div class='page-in'
-           v-else-if="page == 'gr' && isSearch == false">
-        个人
+           v-else-if="page == 'offline' && isSearch == false">
+                <div class="block">
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
+          </div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
+          </div>
+          <div class="block-item"
+               :style="img">
+            <div class="blockItem-mask"></div>
+            <div class="blockItem-title">帮我带个东西</div>
+            <div class="blockItem-tag">
+              <i-tag class="i-tags"
+                     name="龙门镖局"
+                     color="blue">
+                龙门镖局
+              </i-tag>
+            </div>
+          </div>
+        </div>
       </div>
       <div class='page-in'
            v-else-if="isSearch == true">
@@ -103,21 +187,53 @@
           </i-tag>
         </div>
       </div>
+      <div class="publish">
+        <div class="publish-icon-block">
+          <div class="public-icon-in">
+            <i-icon class="public-icon"
+                    type="add"
+                    size="39"
+                    color="#fff"
+                    @click="ToAddTask" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 侧边抽屉 -->
+    <div class="drawer">
+      <i-drawer mode="left"
+                :visible="drawerVisible"
+                @close="drawerController">
+        <drawer text="motto"></drawer>
+      </i-drawer>
+      <!-- !侧边抽屉 -->
     </div>
   </div>
 </template>
 
 
 <script>
+import drawer from "@/components/drawer";
+
 export default {
+  components: {
+    drawer
+  },
   data() {
     return {
       isSearch: false,
-      current: "tab1",
-      page: "jh"
+      current: "explore",
+      page: "explore",
+      drawerVisible: false,
+      img:
+        "background-size: cover;background-image: url('https://i.loli.net/2017/08/21/599a521472424.jpg')"
     };
   },
   methods: {
+    ToAddTask() {
+      const url = '../task/main'
+      wx.navigateTo({ url })
+    },
     closeSearch() {
       this.isSearch = false;
     },
@@ -126,8 +242,12 @@ export default {
     },
     tabChange(detail) {
       this.current = detail.target.key;
-      if (this.current == "tab1") this.page = "jh";
-      else if (this.current == "tab2") this.page = "gr";
+      if (this.current == "explore") this.page = "explore";
+      else if (this.current == "online") this.page = "online";
+      else if (this.current == "offline") this.page = "offline";
+    },
+    drawerController() {
+      this.drawerVisible = !this.drawerVisible;
     }
   }
 };
@@ -149,7 +269,8 @@ image {
   height: 100%;
   display: flex;
   align-items: center;
-  box-shadow: 0px 2px 10px rgba(150,150,150,.3);
+  box-shadow: 0px 2px 10px rgba(150, 150, 150, 0.3);
+  background-color: white;
 }
 .nav-search {
   width: 100%;
@@ -202,16 +323,40 @@ image {
 .block {
   padding: 30rpx;
   display: flex;
-  justify-content: center;
   background-color: white;
 }
 .block-item {
-  margin: 0 30rpx;
+  margin-right: 20rpx;
+  width: 125rpx;
+  height: 125rpx;
+  background-color: aqua;
+  border-radius: 20rpx;
   display: flex;
   flex-direction: column;
   font-size: 24rpx;
   text-align: center;
   color: #80848f;
+  overflow: hidden;
+}
+.blockItem-title {
+  flex-grow: 2;
+  padding: 10rpx 10rpx 0rpx 10rpx;
+  color: white;
+  text-align: left;
+  z-index: 1;
+}
+.blockItem-tag {
+  flex-grow: 1;
+  padding: 5rpx 10rpx 10rpx 10rpx;
+  z-index: 1;
+}
+.blockItem-mask {
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 20rpx;
+  background-color: #0000002e;
+  position: absolute;
+  z-index: 0;
 }
 .list {
   width: 100%;
@@ -235,7 +380,7 @@ image {
   margin-left: -50rpx;
   border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
-  box-shadow: 0px 1px 10px rgba(150,150,150,.3);
+  box-shadow: 0px 1px 10px rgba(150, 150, 150, 0.3);
 }
 .publish-icon-block {
   width: 100%;

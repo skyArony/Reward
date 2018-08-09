@@ -14,9 +14,9 @@ export default {
     pages: [
       'pages/logs/main',
       'pages/index/main',
-      'pages/home/main',
+      '^pages/home/main',
       'pages/task/main',
-      '^pages/publish/main',
+      'pages/publish/main',
     ],
     window: {
       backgroundTextStyle: 'light',

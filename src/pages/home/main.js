@@ -14,7 +14,9 @@ export default {
       "i-tabs": "/iview/tabs/index",
       "i-tab": "/iview/tab/index",
       "i-icon": "/iview/icon/index",
-      "i-tag": "/iview/tag/index"
+      "i-tag": "/iview/tag/index",
+      "i-drawer": "/iview/drawer/index",
+      "i-avatar": "/iview/avatar/index"
     },
   }
 }

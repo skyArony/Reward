@@ -14,14 +14,13 @@ export default {
 <style>
 page {
   background-color: #f5f5f5;
-
+  height: 100%;
 }
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
 }
 /* this rule will be remove */

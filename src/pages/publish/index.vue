@@ -46,7 +46,7 @@
       </picker>
     </div>
     <div class="action">
-      <button type="primary">揭榜</button>
+      <button type="primary">发布</button>
     </div>
   </div>
 </template>
