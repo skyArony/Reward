@@ -48,11 +48,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -60,11 +58,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -72,11 +68,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙门镖局"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
         </div>
@@ -84,17 +78,15 @@
       </div>
       <div class='page-in'
            v-else-if="page == 'online' && isSearch == false">
-                <div class="block">
+        <div class="block">
           <div class="block-item"
                :style="img">
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙门镖局"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -102,11 +94,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="1234567"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -114,28 +104,24 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
         </div>
       </div>
       <div class='page-in'
            v-else-if="page == 'offline' && isSearch == false">
-                <div class="block">
+        <div class="block">
           <div class="block-item"
                :style="img">
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -143,11 +129,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
           <div class="block-item"
@@ -155,11 +139,9 @@
             <div class="blockItem-mask"></div>
             <div class="blockItem-title">帮我带个东西</div>
             <div class="blockItem-tag">
-              <i-tag class="i-tags"
-                     name="龙门镖局"
-                     color="blue">
-                龙门镖局
-              </i-tag>
+              <tag text="龙"
+                   color="#2d8cf0"
+                   fontSize="19rpx"></tag>
             </div>
           </div>
         </div>
@@ -214,10 +196,12 @@
 
 <script>
 import drawer from "@/components/drawer";
+import tag from "@/components/tag";
 
 export default {
   components: {
-    drawer
+    drawer,
+    tag
   },
   data() {
     return {
@@ -231,8 +215,8 @@ export default {
   },
   methods: {
     ToAddTask() {
-      const url = '../task/main'
-      wx.navigateTo({ url })
+      const url = "../publish/main";
+      wx.navigateTo({ url });
     },
     closeSearch() {
       this.isSearch = false;
@@ -340,15 +324,17 @@ image {
 }
 .blockItem-title {
   flex-grow: 2;
-  padding: 10rpx 10rpx 0rpx 10rpx;
+  padding: 15rpx 15rpx 0rpx 15rpx;
   color: white;
   text-align: left;
+  font-size: 22rpx;
   z-index: 1;
 }
 .blockItem-tag {
   flex-grow: 1;
-  padding: 5rpx 10rpx 10rpx 10rpx;
+  padding: 5rpx 15rpx 15rpx 15rpx;
   z-index: 1;
+  display: flex;
 }
 .blockItem-mask {
   width: 125rpx;
@@ -399,5 +385,11 @@ image {
 .public-icon {
   width: 39rpx;
   height: 39rpx;
+}
+</style>
+
+<style>
+.blockItem-i-tag::shadow .i-tag {
+  font-size: 19rpx;
 }
 </style>
