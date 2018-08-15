@@ -14,12 +14,12 @@
           <i-tag class="i-tags"
                  name="龙门镖局"
                  color="yellow">
-            龙门镖局一级镖师
+            龙门镖局 • 一级镖师
           </i-tag>
           <i-tag class="i-tags"
                  name="龙门镖局"
                  color="yellow">
-            博物学会长老
+            博物学会 • 长老
           </i-tag>
         </div>
       </div>
@@ -27,31 +27,34 @@
       </div>
     </div>
     <div class="info-list">
-      <div class="list-item">
+      <div class="list-item"
+           @click="ToMsg">
         <div class="listItem-icon">
           <image class="itemImg"
                  mode="aspectFit"
-                 src="/../static/message.png"></image>
+                 src="/static/message.png"></image>
         </div>
         <div class="listItem-text">
           江湖小道消息
         </div>
       </div>
-      <div class="list-item">
+      <div class="list-item"
+           @click="ToMypublish">
         <div class="listItem-icon">
           <image class="itemImg"
                  mode="aspectFit"
-                 src="/../static/publish.png"></image>
+                 src="/static/publish.png"></image>
         </div>
         <div class="listItem-text">
           发布的悬赏令
         </div>
       </div>
-      <div class="list-item">
+      <div class="list-item"
+           @click="ToMyget">
         <div class="listItem-icon">
           <image class="itemImg"
                  mode="aspectFit"
-                 src="/../static/list.png"></image>
+                 src="/static/list.png"></image>
         </div>
         <div class="listItem-text">
           揭下的悬赏令
@@ -63,8 +66,21 @@
 
 <script>
 export default {
-  props: ["text"]
-};
+  methods: {
+    ToMsg() {
+      const url = '../message/main'
+      wx.navigateTo({ url })
+    },
+    ToMypublish() {
+      const url = '../mypublish/main'
+      wx.navigateTo({ url })
+    },
+    ToMyget() {
+      const url = '../myget/main'
+      wx.navigateTo({ url })
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -132,7 +148,7 @@ export default {
 }
 .list-item {
   width: 100%;
-  height: 90rpx;
+  height: 112rpx;
   display: flex;
   padding: 40rpx 40rpx 0 40rpx;
   box-sizing: border-box;
@@ -143,7 +159,7 @@ export default {
 }
 .listItem-text {
   flex-grow: 4;
-  font-size: 24rpx;
+  font-size: 32rpx;
   color: #212121;
 }
 .listItem-icon {

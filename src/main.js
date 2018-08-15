@@ -17,12 +17,14 @@ export default {
       '^pages/home/main',
       'pages/task/main',
       'pages/publish/main',
+      'pages/message/main',
+      'pages/mypublish/main'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#F06292',
+      navigationBarBackgroundColor: '#e91e63',
       navigationBarTitleText: '悬赏令',
-      navigationBarTextStyle: 'black',
+      navigationBarTextStyle: 'white'
     }
   }
 }

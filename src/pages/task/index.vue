@@ -14,10 +14,10 @@
                :src="url"></image>
         <image class="task-img"
                mode="aspectFill"
-               src="/../static/bg2018.png"></image>
+               src="/static/bg2018.png"></image>
         <image class="task-img"
                mode="aspectFill"
-               src="/../static/bg.png"></image>
+               src="/static/bg.png"></image>
       </div>
       <div class="bottom-bar">
         <div class="time-postion">

@@ -7,11 +7,10 @@ app.$mount()
 export default {
   // 这个字段走 app.json
   config: {
-    window: {
-    },
+    navigationBarTitleText: '发布',
     usingComponents: {
-      "i-input": "/iview/input/index",
-      "i-icon": "/iview/icon/index",
-    },
+      'i-input': '/iview/input/index',
+      'i-icon': '/iview/icon/index'
+    }
   }
 }

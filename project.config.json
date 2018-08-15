@@ -10,7 +10,7 @@
 	},
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
-	"appid": "wxa6cce1b01dee378d",
+	"appid": "wx6eaf56b1dfc422c8",
 	"projectname": "reword",
 	"libVersion": "2.2.1",
 	"condition": {

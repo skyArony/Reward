@@ -14,10 +14,10 @@
                 @change="tabChange">
           <i-tab key="explore"
                  title="发现"></i-tab>
-          <i-tab key="online"
-                 title="线上"></i-tab>
           <i-tab key="offline"
                  title="线下"></i-tab>
+          <i-tab key="online"
+                 title="线上"></i-tab>
         </i-tabs>
         <i-icon class="search"
                 type="search"
@@ -42,108 +42,86 @@
       <div class='page-in'
            style="background-color: #f5f5f5"
            v-if="page == 'explore' && isSearch == false">
-        <div class="block">
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
+        <scroll-view class="scroll-block"
+                     scroll-x
+                     scroll-with-animation>
+          <div class="block">
+            <div v-for="(item, index) in exploreBlock"
+                 class="block-item"
+                 :style="{ backgroundImage: item.img }">
+              <div class="blockItem-mask"></div>
+              <div class="blockItem-title">{{item.title}}</div>
+              <div class="blockItem-tag">
+                <tag :text="item.tagText"
+                     :color="item.tagColor"></tag>
+              </div>
             </div>
           </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙门镖局"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
+        </scroll-view>
+        <div class="list">
+          <mlist v-for="item in TaskExplore"
+                 :title="item.title"
+                 :desc="item.desc"
+                 :reward="item.reward"
+                 :square="item.square"
+                 :area="item.area"
+                 :img="item.img"></mlist>
         </div>
-        <div class="list"></div>
       </div>
       <div class='page-in'
            v-else-if="page == 'online' && isSearch == false">
-        <div class="block">
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙门镖局"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
+        <scroll-view class="scroll-block"
+                     scroll-x
+                     scroll-with-animation>
+          <div class="block">
+            <div v-for="(item, index) in onlineBlock"
+                 class="block-item"
+                 :style="{ backgroundImage: item.img }">
+              <div class="blockItem-mask"></div>
+              <div class="blockItem-title">{{item.title}}</div>
+              <div class="blockItem-tag">
+                <tag :text="item.tagText"
+                     :color="item.tagColor"></tag>
+              </div>
             </div>
           </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="1234567"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
+        </scroll-view>
+        <div class="list">
+          <mlist v-for="item in TaskExplore"
+                 :title="item.title"
+                 :desc="item.desc"
+                 :reward="item.reward"
+                 :square="item.square"
+                 :area="item.area"
+                 :img="item.img"></mlist>
         </div>
       </div>
       <div class='page-in'
            v-else-if="page == 'offline' && isSearch == false">
-        <div class="block">
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
+        <scroll-view class="scroll-block"
+                     scroll-x
+                     scroll-with-animation>
+          <div class="block">
+            <div v-for="(item, index) in offlineBlock"
+                 class="block-item"
+                 :style="{ backgroundImage: item.img }">
+              <div class="blockItem-mask"></div>
+              <div class="blockItem-title">{{item.title}}</div>
+              <div class="blockItem-tag">
+                <tag :text="item.tagText"
+                     :color="item.tagColor"></tag>
+              </div>
             </div>
           </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
-          <div class="block-item"
-               :style="img">
-            <div class="blockItem-mask"></div>
-            <div class="blockItem-title">帮我带个东西</div>
-            <div class="blockItem-tag">
-              <tag text="龙"
-                   color="#2d8cf0"
-                   fontSize="19rpx"></tag>
-            </div>
-          </div>
+        </scroll-view>
+        <div class="list">
+          <mlist v-for="item in TaskExplore"
+                 :title="item.title"
+                 :desc="item.desc"
+                 :reward="item.reward"
+                 :square="item.square"
+                 :area="item.area"
+                 :img="item.img"></mlist>
         </div>
       </div>
       <div class='page-in'
@@ -169,15 +147,14 @@
           </i-tag>
         </div>
       </div>
-      <div class="publish">
-        <div class="publish-icon-block">
-          <div class="public-icon-in">
-            <i-icon class="public-icon"
-                    type="add"
-                    size="39"
-                    color="#fff"
-                    @click="ToAddTask" />
-          </div>
+    </div>
+    <div class="publish"
+         @click="ToAddTask">
+      <div class="publish-icon-block">
+        <div class="public-icon-in">
+          <image class="public-icon"
+                 mode="aspectFill"
+                 src="/static/add.png"></image>
         </div>
       </div>
     </div>
@@ -195,46 +172,84 @@
 
 
 <script>
-import drawer from "@/components/drawer";
-import tag from "@/components/tag";
+import { HomeSquare, TaskList } from '@/utils/mock'
+
+import drawer from '@/components/drawer'
+import tag from '@/components/tag'
+import mlist from '@/components/m-list'
 
 export default {
   components: {
     drawer,
-    tag
+    tag,
+    mlist
   },
   data() {
     return {
       isSearch: false,
-      current: "explore",
-      page: "explore",
+      current: 'explore',
+      page: 'explore',
       drawerVisible: false,
       img:
-        "background-size: cover;background-image: url('https://i.loli.net/2017/08/21/599a521472424.jpg')"
-    };
+        "background-image: url('https://i.loli.net/2017/08/21/599a521472424.jpg')"
+    }
+  },
+  computed: {
+    // 上方 block
+    exploreBlock: function() {
+      return HomeSquare.sort(() => {
+        return Math.random() > 0.5 ? -1 : 1
+      })
+    },
+    onlineBlock: function() {
+      return HomeSquare.filter(function(item) {
+        return item.isOnline === true
+      })
+    },
+    offlineBlock: function() {
+      return HomeSquare.filter(function(item) {
+        return item.isOnline !== true
+      })
+    },
+    // 下方 list
+    TaskExplore: function() {
+      return TaskList.sort(() => {
+        return Math.random() > 0.5 ? -1 : 1
+      })
+    }
+    // TaskOnline: function() {
+    //   return TaskList.filter(function(item) {
+    //     return item.isOnline === true
+    //   })
+    // },
+    // TaskOffline: function() {
+    //   return TaskList.filter(function(item) {
+    //     return item.isOnline !== true
+    //   })
+    // }
   },
   methods: {
     ToAddTask() {
-      const url = "../publish/main";
-      wx.navigateTo({ url });
+      const url = '../publish/main'
+      wx.navigateTo({ url })
     },
     closeSearch() {
-      this.isSearch = false;
+      this.isSearch = false
     },
     startSearch() {
-      this.isSearch = true;
+      this.isSearch = true
     },
     tabChange(detail) {
-      this.current = detail.target.key;
-      if (this.current == "explore") this.page = "explore";
-      else if (this.current == "online") this.page = "online";
-      else if (this.current == "offline") this.page = "offline";
+      this.current = detail.target.key
+      if (this.current == 'explore') this.page = 'explore'
+      else if (this.current == 'online') this.page = 'online'
+      else if (this.current == 'offline') this.page = 'offline'
     },
     drawerController() {
-      this.drawerVisible = !this.drawerVisible;
+      this.drawerVisible = !this.drawerVisible
     }
   }
-};
+}
 </script>
 
 
@@ -245,12 +260,11 @@ image {
 }
 .top-nav {
   width: 100%;
-  height: 76rpx;
-  z-index: 1;
+  z-index: 3;
+  position: fixed;
 }
 .nav-normal {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   box-shadow: 0px 2px 10px rgba(150, 150, 150, 0.3);
@@ -258,19 +272,21 @@ image {
 }
 .nav-search {
   width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-  padding: 0 20rpx;
+  height: 86rpx;
+  background-color: #fff;
+  padding: 20rpx;
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  border-bottom: 1rpx solid #eeeeee;
 }
 .search-input {
   font-size: 22rpx;
-  background-color: white;
+  background-color: #f5f5f5;
   padding-left: 15rpx;
   margin-right: 15rpx;
   flex-grow: 20;
+  border-radius: 10rpx;
 }
 .search-close {
   flex-grow: 1;
@@ -300,13 +316,20 @@ image {
 }
 .page-body {
   width: 100%;
+  margin-top: 40px;
 }
 .page-in {
   width: 100%;
 }
+.scroll-block {
+  border-bottom: 1rpx solid #eeeeee;
+  margin-bottom: 15rpx;
+  background-color: white;
+}
 .block {
   padding: 30rpx;
-  display: flex;
+  box-sizing: border-box;
+  display: inline-flex;
   background-color: white;
 }
 .block-item {
@@ -321,6 +344,7 @@ image {
   text-align: center;
   color: #80848f;
   overflow: hidden;
+  background-size: cover;
 }
 .blockItem-title {
   flex-grow: 2;
@@ -331,7 +355,7 @@ image {
   z-index: 1;
 }
 .blockItem-tag {
-  flex-grow: 1;
+  height: 32rpx;
   padding: 5rpx 15rpx 15rpx 15rpx;
   z-index: 1;
   display: flex;
@@ -344,12 +368,6 @@ image {
   position: absolute;
   z-index: 0;
 }
-.list {
-  width: 100%;
-  margin-top: 15rpx;
-  height: 200rpx;
-  background-color: white;
-}
 .block-tag {
   padding: 30rpx;
 }
@@ -358,15 +376,15 @@ image {
 }
 .publish {
   width: 100rpx;
-  height: 180rpx;
-  position: absolute;
-  bottom: 0;
-  position: absolute;
+  height: 80px;
+  position: fixed;
   left: 50%;
+  bottom: 0;
   margin-left: -50rpx;
   border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   box-shadow: 0px 1px 10px rgba(150, 150, 150, 0.3);
+  background-color: white;
 }
 .publish-icon-block {
   width: 100%;
@@ -381,10 +399,13 @@ image {
   height: 70rpx;
   background-color: red;
   border-radius: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .public-icon {
-  width: 39rpx;
-  height: 39rpx;
+  width: 65rpx;
+  height: 65rpx;
 }
 </style>
 

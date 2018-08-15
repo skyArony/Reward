@@ -7,11 +7,10 @@ app.$mount()
 export default {
   // 这个字段走 app.json
   config: {
-    window: {
-    },
+    navigationBarTitleText: '悬赏令详情',
     usingComponents: {
-      "i-tag": "/iview/tag/index",
-      "i-avatar": "/iview/avatar/index"
-    },
+      'i-tag': '/iview/tag/index',
+      'i-avatar': '/iview/avatar/index'
+    }
   }
 }
