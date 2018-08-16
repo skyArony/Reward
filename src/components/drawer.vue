@@ -8,7 +8,7 @@
                  src="https://i.loli.net/2017/08/21/599a521472424.jpg"></image>
         </div>
         <div class="userInfo-name">
-          <font>我是一个大侠</font>
+          <font>独孤求败</font>
         </div>
         <div class="userInfo-tag">
           <i-tag class="i-tags"
@@ -18,7 +18,7 @@
           </i-tag>
           <i-tag class="i-tags"
                  name="龙门镖局"
-                 color="yellow">
+                 color="green">
             博物学会 • 长老
           </i-tag>
         </div>
@@ -60,6 +60,17 @@
           揭下的悬赏令
         </div>
       </div>
+      <div class="list-item"
+           @click="ToAddSquare">
+        <div class="listItem-icon">
+          <image class="itemImg"
+                 mode="aspectFit"
+                 src="/static/add3.png"></image>
+        </div>
+        <div class="listItem-text">
+          新建一个广场
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -78,6 +89,10 @@ export default {
     ToMyget() {
       const url = '../myget/main'
       wx.navigateTo({ url })
+    },
+    ToAddSquare() {
+      const url = '../addsquare/main'
+      wx.navigateTo({ url })
     }
   }
 }
@@ -85,7 +100,7 @@ export default {
 
 <style scoped>
 .Ldrawer {
-  width: 600rpx;
+  width: 580rpx;
   height: 1218rpx;
   background-color: white;
   display: flex;
@@ -102,7 +117,7 @@ export default {
   content: "";
   width: 100%;
   height: 300rpx;
-  background-color: #0000002e;
+  background-color: #00000045;
 }
 .user-info {
   display: flex;

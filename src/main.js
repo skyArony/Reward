@@ -18,11 +18,13 @@ export default {
       'pages/task/main',
       'pages/publish/main',
       'pages/message/main',
-      'pages/mypublish/main'
+      'pages/mypublish/main',
+      'pages/square/main',
+      'pages/addsquare/main'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#e91e63',
+      navigationBarBackgroundColor: '#ef5350',
       navigationBarTitleText: '悬赏令',
       navigationBarTextStyle: 'white'
     }

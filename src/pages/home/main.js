@@ -11,12 +11,12 @@ export default {
       backgroundColor: '#f5f5f5'
     },
     usingComponents: {
-      "i-tabs": "/iview/tabs/index",
-      "i-tab": "/iview/tab/index",
-      "i-icon": "/iview/icon/index",
-      "i-tag": "/iview/tag/index",
-      "i-drawer": "/iview/drawer/index",
-      "i-avatar": "/iview/avatar/index"
-    },
+      'i-tabs': '/iview/tabs/index',
+      'i-tab': '/iview/tab/index',
+      'i-icon': '/iview/icon/index',
+      'i-tag': '/iview/tag/index',
+      'i-drawer': '/iview/drawer/index',
+      'i-avatar': '/iview/avatar/index'
+    }
   }
 }

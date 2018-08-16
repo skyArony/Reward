@@ -9,28 +9,28 @@
       <div v-if="img"
            class="list-info"
            :style="">
-        <div class="info-left">
+        <div class="info-top">
           <div class="info-title">
             {{title}}
           </div>
-          <div class="info-desc">
-            {{desc}}
-          </div>
+          <div class="info-reward">￥ {{reward}}</div>
         </div>
-        <div class="info-right">￥ {{reward}}</div>
+        <div class="info-desc">
+          {{desc}}
+        </div>
       </div>
       <div v-else="img"
            class="list-info-s"
            :style="">
-        <div class="info-left-s">
+        <div class="info-top">
           <div class="info-title">
             {{title}}
           </div>
-          <div class="info-desc">
-            {{desc}}
-          </div>
+          <div class="info-reward">￥ {{reward}}</div>
         </div>
-        <div class="info-right">￥ {{reward}}</div>
+        <div class="info-desc">
+          {{desc}}
+        </div>
       </div>
     </div>
     <div class="list-bottom">
@@ -98,6 +98,26 @@ export default {
       height 120rpx
       width 560rpx
       display flex
+      flex-direction column
+
+      .info-top
+        width 100%
+        display flex
+        justify-content space-between
+        margin-bottom 10rpx
+
+        .info-title
+          color #212121
+          font-size 30rpx
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+
+        .info-reward
+          min-width 80rpx
+          flex-shrink 0
+          font-size 28rpx
+          color red
 
       .info-left
         width 480rpx
@@ -106,34 +126,16 @@ export default {
         box-sizing border-box
         flex-direction column
 
-        .info-title
-          width 100%
-          color #212121
-          font-size 30rpx
-          overflow hidden
-          text-overflow ellipsis
-          white-space nowrap
-          margin-bottom 10rpx
-
-        .info-desc
-          width 100%
-          color #757575
-          font-size 25rpx
-          display -webkit-box
-          overflow hidden
-          text-overflow ellipsis
-          word-break break-all
-          -webkit-box-orient vertical
-          -webkit-line-clamp 2
-
-      .info-right
-        height 120rpx
-        width 80rpx
-        padding-top 20rpx
-        box-sizing border-box
-        flex-shrink 0
-        font-size 28rpx
-        color red
+      .info-desc
+        width 100%
+        color #757575
+        font-size 25rpx
+        display -webkit-box
+        overflow hidden
+        text-overflow ellipsis
+        word-break break-all
+        -webkit-box-orient vertical
+        -webkit-line-clamp 2
 
   .list-bottom
     display flex
@@ -154,14 +156,15 @@ export default {
 
 .list-info-s
   height 120rpx
+  width 100%
   display flex
+  flex-direction column
 
-  .info-left-s
-    width 620rpx
+  .info-top
+    width 100%
     display flex
-    padding-right 15rpx
-    box-sizing border-box
-    flex-direction column
+    justify-content space-between
+    margin-bottom 10rpx
 
     .info-title
       width 100%
@@ -170,27 +173,23 @@ export default {
       overflow hidden
       text-overflow ellipsis
       white-space nowrap
-      margin-bottom 10rpx
 
-    .info-desc
-      width 100%
-      color #757575
-      font-size 25rpx
-      display -webkit-box
-      overflow hidden
-      text-overflow ellipsis
-      word-break break-all
-      -webkit-box-orient vertical
-      -webkit-line-clamp 2
+    .info-reward
+      min-width 80rpx
+      flex-shrink 0
+      font-size 28rpx
+      color red
 
-  .info-right
-    height 120rpx
-    width 80rpx
-    padding-top 20rpx
-    box-sizing border-box
-    flex-shrink 0
-    font-size 28rpx
-    color red
+  .info-desc
+    width 100%
+    color #757575
+    font-size 25rpx
+    display -webkit-box
+    overflow hidden
+    text-overflow ellipsis
+    word-break break-all
+    -webkit-box-orient vertical
+    -webkit-line-clamp 2
 </style>
 
 <style>

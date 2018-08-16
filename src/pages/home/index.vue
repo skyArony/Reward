@@ -48,7 +48,8 @@
           <div class="block">
             <div v-for="(item, index) in exploreBlock"
                  class="block-item"
-                 :style="{ backgroundImage: item.img }">
+                 :style="{ backgroundImage: item.img }"
+                 @click="ToSquare">
               <div class="blockItem-mask"></div>
               <div class="blockItem-title">{{item.title}}</div>
               <div class="blockItem-tag">
@@ -76,7 +77,8 @@
           <div class="block">
             <div v-for="(item, index) in onlineBlock"
                  class="block-item"
-                 :style="{ backgroundImage: item.img }">
+                 :style="{ backgroundImage: item.img }"
+                 @click="ToSquare">
               <div class="blockItem-mask"></div>
               <div class="blockItem-title">{{item.title}}</div>
               <div class="blockItem-tag">
@@ -87,7 +89,7 @@
           </div>
         </scroll-view>
         <div class="list">
-          <mlist v-for="item in TaskExplore"
+          <mlist v-for="item in TaskOnline"
                  :title="item.title"
                  :desc="item.desc"
                  :reward="item.reward"
@@ -104,7 +106,8 @@
           <div class="block">
             <div v-for="(item, index) in offlineBlock"
                  class="block-item"
-                 :style="{ backgroundImage: item.img }">
+                 :style="{ backgroundImage: item.img }"
+                 @click="ToSquare">
               <div class="blockItem-mask"></div>
               <div class="blockItem-title">{{item.title}}</div>
               <div class="blockItem-tag">
@@ -115,7 +118,7 @@
           </div>
         </scroll-view>
         <div class="list">
-          <mlist v-for="item in TaskExplore"
+          <mlist v-for="item in TaskOffline"
                  :title="item.title"
                  :desc="item.desc"
                  :reward="item.reward"
@@ -216,21 +219,33 @@ export default {
       return TaskList.sort(() => {
         return Math.random() > 0.5 ? -1 : 1
       })
+    },
+    TaskOnline: function() {
+      let tempList = TaskList.filter(function(item) {
+        return item.area === undefined
+      })
+
+      return tempList.sort(() => {
+        return Math.random() > 0.5 ? -1 : 1
+      })
+    },
+    TaskOffline: function() {
+      let tempList = TaskList.filter(function(item) {
+        return item.area !== undefined
+      })
+
+      return tempList.sort(() => {
+        return Math.random() > 0.5 ? -1 : 1
+      })
     }
-    // TaskOnline: function() {
-    //   return TaskList.filter(function(item) {
-    //     return item.isOnline === true
-    //   })
-    // },
-    // TaskOffline: function() {
-    //   return TaskList.filter(function(item) {
-    //     return item.isOnline !== true
-    //   })
-    // }
   },
   methods: {
     ToAddTask() {
       const url = '../publish/main'
+      wx.navigateTo({ url })
+    },
+    ToSquare() {
+      const url = '../square/main'
       wx.navigateTo({ url })
     },
     closeSearch() {
@@ -325,6 +340,7 @@ image {
   border-bottom: 1rpx solid #eeeeee;
   margin-bottom: 15rpx;
   background-color: white;
+  height: 185rpx;
 }
 .block {
   padding: 30rpx;
@@ -336,7 +352,7 @@ image {
   margin-right: 20rpx;
   width: 125rpx;
   height: 125rpx;
-  background-color: aqua;
+  background-color: #00000061;
   border-radius: 20rpx;
   display: flex;
   flex-direction: column;
@@ -353,6 +369,7 @@ image {
   text-align: left;
   font-size: 22rpx;
   z-index: 1;
+  font-weight: 500;
 }
 .blockItem-tag {
   height: 32rpx;
@@ -364,7 +381,7 @@ image {
   width: 125rpx;
   height: 125rpx;
   border-radius: 20rpx;
-  background-color: #0000002e;
+  background-color: #00000061;
   position: absolute;
   z-index: 0;
 }
@@ -397,7 +414,7 @@ image {
   margin: 15rpx;
   width: 70rpx;
   height: 70rpx;
-  background-color: red;
+  background-color: #ef5350;
   border-radius: 35rpx;
   display: flex;
   justify-content: center;

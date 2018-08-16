@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mlist v-for="item in TaskExplore"
+    <mlist v-for="item in TaskGet"
            :title="item.title"
            :desc="item.desc"
            :reward="item.reward"
@@ -22,8 +22,12 @@ export default {
   },
   computed: {
     // 下方 list
-    TaskExplore: function() {
-      return TaskList.sort(() => {
+    TaskGet: function() {
+      let tempList = TaskList.filter(function(item) {
+        return (item.status.text === '待完成' || item.status.text === '已完成')
+      })
+
+      return tempList.sort(() => {
         return Math.random() > 0.5 ? -1 : 1
       })
     }

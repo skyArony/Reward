@@ -26,9 +26,9 @@
     </div>
     <div class="center">
       <i-input :value="money"
-               type="number"
+               type="digit"
                right
-               title="悬赏金 $"
+               title="悬赏金 ￥"
                mode="wrapped"
                placeholder="最少 0.01 元" />
     </div>
@@ -52,7 +52,8 @@
       </picker>
     </div>
     <div class="action">
-      <button type="primary">发布</button>
+      <button type="primary"
+              @click="ToMypublish">发布</button>
     </div>
   </div>
 </template>
@@ -65,7 +66,7 @@ export default {
     return {
       title: '',
       desc: '',
-      money: 0.01,
+      money: '',
       tags: ['龙门镖局', '重金求画', '一码千金', '博物学会'],
       ttl: ['12小时', '24小时', '三天', '七天', '十天'],
       tagIndex: 0,
@@ -75,6 +76,10 @@ export default {
   methods: {
     pickerChange: function(data) {
       console.log(data)
+    },
+    ToMypublish() {
+      const url = '../mypublish/main'
+      wx.redirectTo({ url })
     }
   }
 }

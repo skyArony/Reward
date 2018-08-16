@@ -40,6 +40,7 @@ export default {
   .msgInfo
     display flex
     flex-direction column
+    margin-left 20rpx
 
     .infoTop
       display flex
@@ -53,20 +54,20 @@ export default {
 
         .userName
           color #212121
-          margin-left 10rpx
-          font-size 26rpx
+          font-size 28rpx
+          font-weight 700
         
         .tipType
-          color #757575
-          font-size 24rpx
-          margin-left 5rpx
+          color #9e9e9e
+          font-size 26rpx
+          margin-left 10rpx
 
       .infoTopRight
-        color #757575
+        color #9e9e9e
         font-size 20rpx
 
     .msgText
       color #757575
-      margin-left 10rpx
-      font-size 22rpx
+      font-size 28rpx
+      font-weight 400
 </style>

@@ -3,7 +3,7 @@
     <div class="top-info">
       <div class="title-info">
         <font>我是标题</font>
-        <font class="monney">$ 0.01</font>
+        <font class="monney">￥ 0.01</font>
       </div>
       <div class="text-info">
         <text>帮我领个快递!地点明基商务广场</text>
@@ -41,19 +41,22 @@
           <i-tag class="i-tags"
                  name="黄衣少侠"
                  type='border'
-                 color="default">
+                 color="yellow">
             黄衣少侠
           </i-tag>
         </div>
         <div class="text-info-bottom">我是一个大侠</div>
       </div>
       <div style="display: flex;align-items: center;position: absolute;right: 20rpx;">
-        <button type="primary" size="mini" plain="true">联系</button>
+        <button type="primary"
+                size="mini"
+                plain="true">联系</button>
       </div>
     </div>
     <div class="comments"></div>
     <div class="action">
-      <button type="primary">揭榜</button>
+      <button type="primary"
+              @click="ToMyGet">揭榜</button>
     </div>
   </div>
 </template>
@@ -62,10 +65,16 @@
 export default {
   data() {
     return {
-      url: "https://i.loli.net/2017/08/21/599a521472424.jpg"
+      url: 'https://i.loli.net/2017/08/21/599a521472424.jpg'
+    }
+  },
+  methods: {
+    ToMyGet() {
+      const url = '../myget/main'
+      wx.redirectTo({ url })
     }
   }
-};
+}
 </script>
 
 <style scoped>
