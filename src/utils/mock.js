@@ -87,12 +87,12 @@ const TaskList = [
   {
     id: 1,
     img: 'url(http://www.orczhou.com/wp-content/uploads/2016/03/TB11e2VJXXXXXXtaXXXXXXXXXXX_0-item_pic.jpg)',
-    title: '出售95新 cherry 键盘,可小刀',
+    title: 'cherry 键盘进了点水,有个按键不灵了,求个会修键盘的大神',
     desc:
-      '95新 cherry 键盘,买了一个星期,最近想换手机,1200出售,可小刀.',
-    reward: 1200,
+      'cherry 键盘进了点水,有个按键不灵了,求个会修键盘的大神',
+    reward: 120,
     square: {
-      text: '永安当',
+      text: '工巧',
       color: '#2d8cf0'
     },
     status: {
@@ -175,13 +175,13 @@ const TaskList = [
     img: null,
     title: '设计logo',
     desc: '我们团队最近开发了个新游戏需要个logo 有学设计的朋友吗 酬劳可以另议',
-    reward: 200,
+    reward: 1200,
     square: {
       text: '设计',
       color: '#2d8cf0'
     },
     status: {
-      text: '12人揭榜',
+      text: '待完成',
       color: '#ef5350'
     }
   },
@@ -251,6 +251,25 @@ const TaskList = [
     },
     status: {
       text: '3人揭榜',
+      color: '#ef5350'
+    }
+  },
+  {
+    id: 11,
+    img: null,
+    title: '明基广场的快递',
+    desc: '下班忘了领快递,哪位加班的同事下班帮我领一下,我住 XXX, 顺路的接.',
+    reward: 10,
+    square: {
+      text: '龙门镖局',
+      color: '#2d8cf0'
+    },
+    area: {
+      text: '明基广场',
+      color: '#f90'
+    },
+    status: {
+      text: '被揭榜',
       color: '#ef5350'
     }
   }

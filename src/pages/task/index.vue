@@ -2,11 +2,11 @@
   <div class="container">
     <div class="top-info">
       <div class="title-info">
-        <font>我是标题</font>
-        <font class="monney">￥ 0.01</font>
+        <font>设计logo</font>
+        <font class="monney">￥ 1200</font>
       </div>
       <div class="text-info">
-        <text>帮我领个快递!地点明基商务广场</text>
+        <text>我们团队最近开发了个新游戏需要个logo 有学设计的朋友吗 酬劳可以另议</text>
       </div>
       <div class="img-info">
         <image class="task-img"
@@ -26,10 +26,10 @@
           <font>8/7 13:56</font>
         </div>
         <i-tag class="i-tags"
-               name="龙门镖局"
+               name="设计"
                type='border'
                color="blue">
-          龙门镖局
+          设计
         </i-tag>
       </div>
     </div>
